@@ -40,7 +40,7 @@ class Money
       end
 
       def rates_expired?
-        rates_expired_at && rates_expired_at <= Time.now
+        rates_expired_at.nil? ? true : rates_expired_at <= Time.now
       end
 
       private
